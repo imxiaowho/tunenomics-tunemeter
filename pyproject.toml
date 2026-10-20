@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tunenomics-tunemeter"
+version = "3.3.5"
+description = "Offline multi-harness usage collection and redacted aggregate handoffs"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+tunemeter = "tunenomics_tunemeter.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+tunenomics_tunemeter = ["assets/*.md"]

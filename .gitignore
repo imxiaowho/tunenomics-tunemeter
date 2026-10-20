@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+dist/
+*.egg-info/
+reports/
+verification/
+AGENTS.md
+CURRENT-STATE.md
+MEMORY.md

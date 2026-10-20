@@ -1,0 +1,16 @@
+{
+  "schema": "tunemeter-evidence/1.0.0",
+  "records": [
+    {
+      "kind": "subscription_plan",
+      "record_id": "E1",
+      "source_alias": "S1",
+      "scope_alias": "A1",
+      "evidence_status": "declared",
+      "currency": "USD",
+      "amount": "200.00",
+      "period_start": "2026-10-01T00:00:00+08:00",
+      "period_end_exclusive": "2026-11-01T00:00:00+08:00"
+    }
+  ]
+}

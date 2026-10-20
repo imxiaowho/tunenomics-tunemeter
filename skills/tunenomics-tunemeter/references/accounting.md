@@ -1,0 +1,22 @@
+# Scope and Accounting
+
+3.3.3 validates declared event/summary/source counts on import. Omitted event evidence is not empty history: source token aggregates and missing counts stay null, source event counts are declared or unknown, and original total aggregates/provenance remain. These checks are not authentication. See provider-contracts.md for the import boundary and verification limits.
+
+3.3.2 changes diagnostic presentation only: selection mode is preserved, clean all-mode missing roots are grouped, concrete field gaps remain distinct, and completion_note explains the result. Numeric contracts and delivery gates are unchanged. See provider-contracts.md for dated external 3.3.1 evidence and the current static-only checks.
+
+3.3.1 adds selected-file Pi archive recovery, conservative submission gating and explicit informational warnings versus coverage gaps. Pi usage batches through 3.3.0 require recollection. 3.2.1 introduced separate missing/not-collected/eligibility-unknown partitions, delivery completeness and lineage accounting. See [provider-contracts.md](provider-contracts.md); newer corrections supersede prior identity/delivery descriptions. Repackaging cannot repair old totals.
+
+TuneMeter 3.2.0 adds explicit provider contracts to the existing multi-harness format previews; read [harnesses.md](harnesses.md) and [provider-contracts.md](provider-contracts.md). Caller harness and measured source are different: another Agent invoking the CLI does not establish support for its own usage records. Python 3.10+ is required; no third-party runtime libraries or network/model calls. Price conversion is outside TuneMeter scope and belongs to downstream Tunenomics processing.
+
+- Discovery inspects only known/selected supported usage roots. not_found, empty, permission_denied, unsupported_format and partial never mean measured zero.
+- Codex uses cumulative differences, not cumulative sums; repeats, fork history, ambiguous first baselines and resets follow the existing UCO rules. Other adapters read per-message observations, preserve native counters locally and exclude conflicting snapshots. Do not apply Codex baseline logic to their independent records.
+- Normalized input includes cache and normalized output includes reasoning where the source requires it; do not add the subsets again. Native fresh/cache counters remain separate locally. Unknown components stay null. cache-write=0 does not prove no charge. A missing model remains unknown.
+- Configuration tier can be read from thread_settings_applied/thread_settings/service_tier. It is not confirmed billing tier; absent fields are not Standard. Coverage is per selected records, not all client versions.
+- Events are source usage observations, not verified requests. Input p50/p90/p95/p99/max use mixed observation nearest ranks, not request sizes for repricing.
+- Ended turn wall time currently covers Codex only and includes tools/waiting. Other harness duration is null/unknown; mixed totals are partial Codex observations. Global covered_seconds merges measured concurrent intervals; model-specific unions can overlap. Unfinished starts may be stale, not currently running. Unknown time-only rows can have null tokens and zero missing usage events because no usage samples exist.
+- Record timestamps determine daily/hourly token buckets. Empty hours are not proven zero; selected window/snapshot truncation does not establish history completeness. Current conversation usage after snapshot is excluded.
+- CSV uses UTF-8 BOM; empty cells mean unknown/no samples. HTML is escaped and offline; formula-looking CSV strings are escaped.
+
+The local batch has detailed metadata; submission is a separate projection. New multi-harness batches produce an eleven-entry ZIP, adding sources.csv to the prior aggregate package plus manifest.json. Hashes verify package-file consistency only, not raw evidence authenticity. The 13-section intake and selected financial-evidence appendix remain; price conversion is outside scope. Cross-harness mirrored usage is not deduplicated; totals are not guaranteed unique requests.
+
+CLI exit codes: 0 complete/ready pipeline; 4 partial; 3 unsupported source/no data; 2 invalid input; 1 system/IO error. Mixed-source failures do not blank other usable results. JSON stdout is the program result; paths in artifacts are for the local user only. A complete pipeline is not verified historical completeness or product compatibility.
