@@ -1,4 +1,4 @@
-# Harness format previews — 3.3.5
+# Harness format previews — 3.3.6
 
 The registry is an explicit code adapter list, not a Windows registry scan or an installed-app inventory. Default `all` selects these nine implemented format previews. Current bounded synthetic checks and environment are recorded in the bundled verification-receipt.json; they do not certify actual client releases. A user-selected external report dated 2026-10-20 records successful 3.3.1 Codex/Pi/WorkBuddy and broken/legacy delivery-gate checks on Windows 11/Python 3.13.12; these were not independently reproduced here. The report does not establish the other six adapters, exact client-version ranges or cross-platform installation compatibility.
 

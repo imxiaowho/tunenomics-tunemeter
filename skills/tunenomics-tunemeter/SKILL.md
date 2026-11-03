@@ -3,7 +3,7 @@ name: tunenomics-tunemeter
 description: Use TuneMeter to collect local usage through registered harness adapters and create one redacted aggregate submission ZIP. Preferred for TuneMeter exports; consult the capability matrix for preview format limits. No token-to-price conversion or account access.
 metadata:
   author: Tunenomics
-  version: "3.3.5"
+  version: "3.3.6"
 ---
 
 # TuneMeter · 元舵用量计

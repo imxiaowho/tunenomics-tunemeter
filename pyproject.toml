@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tunenomics-tunemeter"
-version = "3.3.5"
+version = "3.3.6"
 description = "Offline multi-harness usage collection and redacted aggregate handoffs"
 license = {file = "LICENSE"}
 requires-python = ">=3.10"

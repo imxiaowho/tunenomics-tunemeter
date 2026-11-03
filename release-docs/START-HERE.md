@@ -1,6 +1,8 @@
 # TuneMeter · 元舵用量计
 
-本包是 TuneMeter CLI 3.3.5 本地交付候选。Python 3.10+，无第三方运行依赖。只采集本机已知格式中的用量，不把 token 换算成订阅账单或实际消费；价格核算交给元舵。
+本包是 TuneMeter CLI 3.3.6 本地交付候选。Python 3.10+，无第三方运行依赖。只采集本机已知格式中的用量，不把 token 换算成订阅账单或实际消费；价格核算交给元舵。
+
+本版提交 ZIP 内脱敏说明改用 `redaction.md`，正文仍为中文 UTF-8，见 ZIP-COMPATIBILITY.md。历史 ZIP 不会被覆盖。
 
 ## 1. 解压与启动
 

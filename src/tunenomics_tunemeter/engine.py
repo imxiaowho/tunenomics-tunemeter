@@ -18,7 +18,7 @@ import zipfile
 from importlib.resources import files as resource_files
 from collections import Counter, defaultdict
 
-VERSION = "3.3.5"
+VERSION = "3.3.6"
 FIELDS = ("input_tokens", "cached_input_tokens", "cache_write_input_tokens",
           "output_tokens", "reasoning_output_tokens", "total_tokens")
 CORE = ("input_tokens", "output_tokens", "total_tokens")
@@ -865,7 +865,7 @@ def write_submission(report, parent):
     readme = ("元舵提交包 · 本机 Codex 用量材料\n\n"
               "你通常只需检查并上传这个 ZIP，无须另行打包本机其他文件。\n"
               "先阅读 ts-ai-cost-intake.md：它说明已有数据、口径及费用等缺口。\n"
-              "再阅读 脱敏说明.md，确认排除项和仍保留的数据；复核后再分享。\n"
+              "再阅读 redaction.md，确认排除项和仍保留的数据；复核后再分享。\n"
               "包内还有精简 summary.json、模型 models.csv、逐日 daily.csv、逐小时 hourly.csv，\n"
               "以及 daily_by_model.csv、hourly_by_model.csv。输入分布与字段／窗口状态见 summary.json。\n"
               "处理档位未采集；缓存写入零值不证明无写入费；事件分位不是请求大小。\n"
@@ -876,7 +876,7 @@ def write_submission(report, parent):
               "逐事件、会话、来源别名和轮次明细留在本机，没有放入本包；本包不能独立核验原始行记录。\n"
               "客户自行选择上传渠道；脚本没有上传或发送。上传后由接收服务按其流程处理。\n")
     return write_bundle({"README.txt": readme.encode("utf-8"),
-                         "脱敏说明.md": redaction_note().encode("utf-8"),
+                         "redaction.md": redaction_note().encode("utf-8"),
                          "ts-ai-cost-intake.md": intake(data, submission=True).encode("utf-8"),
                          "summary.json": json.dumps(data, ensure_ascii=False, indent=2).encode("utf-8"),
                          "models.csv": csv_bytes(data["models"], ["model", "usage_events", *FIELDS, "turn_seconds", "covered_seconds"]),
@@ -899,7 +899,7 @@ def write_evidence_submission(handoff, evidence, parent, redaction_reviewed=Fals
     handoff = selected_file(handoff)
     if handoff.suffix.lower() != ".md":
         raise ValueError("The selected handoff must be Markdown")
-    entries = {"ts-ai-cost-intake.md": handoff.read_bytes(), "脱敏说明.md": redaction_note(manual=True).encode("utf-8")}
+    entries = {"ts-ai-cost-intake.md": handoff.read_bytes(), "redaction.md": redaction_note(manual=True).encode("utf-8")}
     names = []
     for specification in evidence:
         label, separator, filename = specification.partition("=")
@@ -917,7 +917,7 @@ def write_evidence_submission(handoff, evidence, parent, redaction_reviewed=Fals
     entries["README.txt"] = ("元舵提交包 · 选定材料\n\n先检查 ts-ai-cost-intake.md，再自行上传本 ZIP。\n"
                              "仅包含明确选定的文件，不自动收集同目录材料。\n"
                              "附入的是经过脱敏复核的选定副本；打包脚本不自行解析或修改其内容。\n"
-                             "先阅读 脱敏说明.md，核对字段及附件元数据；改名不等于脱敏。\n"
+                             "先阅读 redaction.md，核对字段及附件元数据；改名不等于脱敏。\n"
                              "按材料里的来源别名核对以下文件；未附入的原始证据仍缺失。\n"
                              + ("\n".join(names) if names else "没有附加原始证据。") + "\n脚本没有上传或发送。\n").encode("utf-8")
     return write_bundle(entries, parent)

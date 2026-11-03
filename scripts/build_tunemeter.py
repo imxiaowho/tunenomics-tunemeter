@@ -43,7 +43,7 @@ def main():
     (skill/"verification-receipt.json").write_bytes((docs/"verification-receipt.json").read_bytes())
     cli_items = {"tunemeter.pyz": app, "LICENSE": license_bytes,
                  "README.txt": "请先阅读 START-HERE.md；仅提交复核后的元舵提交包.zip。\n".encode("utf-8")}
-    for name in ("START-HERE.md", "SUPPORT.md", "PRIVACY.md", "VERIFICATION.md", "verification-receipt.json"):
+    for name in ("START-HERE.md", "SUPPORT.md", "PRIVACY.md", "VERIFICATION.md", "ZIP-COMPATIBILITY.md", "verification-receipt.json"):
         cli_items[name] = (docs/name).read_bytes()
     for name in ("harnesses.md", "provider-contracts.md"):
         cli_items[name] = (skill/"references"/name).read_text(encoding="utf-8").replace("scripts/tunemeter.pyz", "tunemeter.pyz").encode("utf-8")

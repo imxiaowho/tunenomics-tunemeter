@@ -1,4 +1,4 @@
-# Provider evidence contracts — 3.3.5 implementation preview
+# Provider evidence contracts — 3.3.6 implementation preview
 
 ## 3.3.4 safe consistency diagnostics
 

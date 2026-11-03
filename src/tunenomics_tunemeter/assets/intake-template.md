@@ -2,7 +2,7 @@
 
 ## 1. 生成信息
 
-- Skill 版本：3.3.5
+- Skill 版本：3.3.6
 - 模板版本：uco-intake/1.2.0
 - 生成时间与时区：{{generated_at}}
 - 批次状态：{{status}}

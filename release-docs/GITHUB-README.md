@@ -2,6 +2,8 @@
 
 **TuneMeter by Tunenomics**：离线采集本机 Agent 用量，生成一个默认脱敏的元舵提交包。CLI 是核心，Agent Skill 是可选入口。
 
+当前补丁 **3.3.6**：提交包内脱敏说明使用 ASCII 文件名 `redaction.md`，减少解压器对中文文件名的识别差异；正文仍是 UTF-8 中文。详见 [兼容性说明](release-docs/ZIP-COMPATIBILITY.md)。既有 3.3.5 回归证据不等同于 3.3.6 已完成完整回归。
+
 ## 客户怎么用
 
 下载 CLI ZIP、完整解压，用已有 Python 3.10+ 运行。无需 pip 依赖、账户登录或手动导出账单：
@@ -32,8 +34,8 @@ python tunemeter.pyz collect --source codex --start 2026-10-01 --end 2026-10-07 
 
 ```text
 python scripts/build_tunemeter.py
-python scripts/verify_tunemeter_release.py --package dist/tunenomics-tunemeter-cli-v3.3.5.zip --output <new-directory-outside-repo>
-python scripts/verify_tunemeter_harnesses.py --package dist/tunenomics-tunemeter-cli-v3.3.5.zip --output <another-new-directory-outside-repo>
+python scripts/verify_tunemeter_release.py --package dist/tunenomics-tunemeter-cli-v3.3.6.zip --output <new-directory-outside-repo>
+python scripts/verify_tunemeter_harnesses.py --package dist/tunenomics-tunemeter-cli-v3.3.6.zip --output <another-new-directory-outside-repo>
 ```
 
 测试自动生成虚构目录；不会扫描默认真实用量根。Skill 源在 skills/tunenomics-tunemeter，安装方式依调用平台而异，不保证其他平台安装兼容。

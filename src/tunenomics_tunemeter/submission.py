@@ -147,12 +147,12 @@ def handoff(data):
 def entries(data):
     if delivery(data)["status"] == "blocked":
         raise ValueError("Unresolved accounting cannot be packaged for delivery")
-    output = {"README.txt": ("TuneMeter · 元舵提交包\n\n先阅读 ts-ai-cost-intake.md 和 脱敏说明.md，复核后自行提交本 ZIP。\n"
+    output = {"README.txt": ("TuneMeter · 元舵提交包\n\n先阅读 ts-ai-cost-intake.md 和 redaction.md，复核后自行提交本 ZIP。\n"
         "这是脱敏汇总，不是匿名数据：保留日期、模型、时间分布及选定费用信息，组合后仍可能被识别。\n"
         "付款、账单、套餐和参考价是不同视图，不能相加。未提供金额不等于零；本包没有原始证据。\n"
         "JSON/CSV 是同一批用量的不同视图，不能重复累加。CSV 为 UTF-8 BOM；空值表示未知。\n"
         "脚本没有上传或发送；当前对话后续使用不在快照内。\n").encode(),
-        "脱敏说明.md": (engine.redaction_note() + "\n额外保留：Harness 名称、状态及按底座聚合；native_usage 数值只在本机明细中，不进入提交包。\n").encode(),
+        "redaction.md": (engine.redaction_note() + "\n额外保留：Harness 名称、状态及按底座聚合；native_usage 数值只在本机明细中，不进入提交包。\n").encode(),
         "ts-ai-cost-intake.md": handoff(data).encode(),
         "summary.json": json.dumps(data, ensure_ascii=False, indent=2).encode()}
     for name, columns in [("models", ["model", "usage_events", *engine.FIELDS, "turn_seconds", "covered_seconds"]),

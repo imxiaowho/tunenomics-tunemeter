@@ -1,23 +1,6 @@
 {
   "schema": "tunemeter-release-verification/1.0.0",
-  "version": "3.3.5",
-  "status": "passed",
-  "tested_at": "2026-10-20T20:53:28+08:00",
-  "app_sha256": "ea523abe017b1eec3e9c6cf7b132b4defae6f19bf1f3bc28255d9554603c9a4a",
-  "tested_input_cli_sha256": "ab7fd5ad7f957b1571bb28b304550bffcb66fb26426b69d761064987d0e58f66",
-  "environment": {"python": "3.12.14", "platform": "Windows-11-10.0.22631-SP0"},
-  "suites": [
-    {"script": "verify_tunemeter_release.py", "checks": 19, "passed": 19, "failed": 0, "cli_invocations": 28},
-    {"script": "verify_tunemeter_harnesses.py", "checks": 40, "passed": 40, "failed": 0, "cli_invocations": 40}
-  ],
-  "visual_review": {
-    "browser": "Chrome headless, isolated temporary context, HTTP/HTTPS blocked",
-    "viewports": ["1280x900", "390x844"],
-    "actual_screenshots_reviewed": true,
-    "document_horizontal_overflow": false,
-    "mobile_table_scroll": true,
-    "scope": "One synthetic Pi/WorkBuddy HTML report; not exhaustive visual or accessibility certification"
-  },
-  "assembly": "Documentation-only rebuild must preserve app_sha256. Final outer ZIP hashes are supplied separately in checksums.json.",
-  "limits": ["Synthetic selected roots only; no real customer usage scanned", "No real client version or cross-platform certification", "No complete history or anonymity guarantee", "No pricing, account integration, installation or upload"]
+  "version": "3.3.6",
+  "status": "pending",
+  "note": "Packaging compatibility patch. Prior 3.3.5 synthetic suite results are historical; no 3.3.6 product regression suite executed. See ZIP-COMPATIBILITY.md for scoped artifact inspection."
 }

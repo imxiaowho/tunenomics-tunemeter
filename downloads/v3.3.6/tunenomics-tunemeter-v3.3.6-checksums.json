@@ -1,0 +1,18 @@
+{
+  "tunenomics-tunemeter-v3.3.6.pyz": {
+    "bytes": 63928,
+    "sha256": "ff57cb8a51b86d7521535c938bd0bc65e242b14668398dd039a3a49060262ae9"
+  },
+  "tunenomics-tunemeter-cli-v3.3.6.zip": {
+    "bytes": 78704,
+    "sha256": "566f350ee7008949d156d8114761868a6c49d853423650ec2a8e6f2f30e1d43d"
+  },
+  "tunenomics-tunemeter-skill-v3.3.6.zip": {
+    "bytes": 79652,
+    "sha256": "f24eaffc294c5a9d3d1d52c37ba7a0881a51f8486a432b8a1f1374a434762a49"
+  },
+  "tunenomics-tunemeter-source-v3.3.6.zip": {
+    "bytes": 112188,
+    "sha256": "ba4c4578671454c2ac8d131a21496346b9a36e2ac9541cec2b64e5410ee5a93d"
+  }
+}
